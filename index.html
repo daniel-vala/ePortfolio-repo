@@ -88,17 +88,18 @@
 
   /* stats band */
   .stats{border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-    background:linear-gradient(rgba(244,240,231,.9),rgba(244,240,231,.9)),url('assets/images/hobby-trading.jpg') center/cover fixed}
+    background:linear-gradient(rgba(244,240,231,.88),rgba(244,240,231,.88)),url('assets/images/markets-bg.jpg') center/cover fixed}
   .stats .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:clamp(26px,5vh,44px) clamp(20px,5vw,44px)}
   @media(max-width:680px){.stats .wrap{grid-template-columns:1fr;gap:22px}}
-  .stat .n{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.75rem);color:var(--accent-deep);font-weight:600;line-height:1.05}
-  .stat .l{font-size:var(--fs-meta);color:var(--muted);margin-top:6px}
+  .stat{text-align:center}
+  .stat .n{font-family:var(--serif);font-size:clamp(1.6rem,2.8vw,2rem);color:var(--accent-deep);font-weight:600;line-height:1.05}
+  .stat .l{font-size:var(--fs-ui);color:var(--muted);margin-top:7px}
 
   /* sections */
   section{padding:clamp(58px,9vh,100px) 0}
   section.tint{background:var(--paper)}
   .label{font-family:var(--sans);font-size:clamp(1.5rem,3.4vw,2.05rem);font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.04em;line-height:1.1;margin-bottom:18px;display:flex;align-items:center;gap:12px}
-  .label .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);flex:none}
+  .label .dot{display:none}
   h2{font-family:var(--serif);font-size:clamp(2rem,4.6vw,2.9rem);color:var(--heading);font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
   .section-intro{color:var(--muted);max-width:60ch;margin-bottom:38px;font-size:var(--fs-lede)}
 
@@ -111,7 +112,7 @@
   .card:hover{transform:translateY(-6px);border-color:var(--border-hi);box-shadow:0 26px 52px -30px rgba(19,18,23,.42)}
   .card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   .card .thumb{aspect-ratio:16/10;background:var(--paper) center/cover no-repeat;border-bottom:1px solid var(--border)}
-  .card .thumb.contain{background-size:auto 86%;background-color:var(--paper)}
+  .card .thumb.contain{background-size:auto 115%;background-color:var(--paper)}
   .card .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
   .card .cat{font-size:.72rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.09em;margin-bottom:8px}
   .card h3{font-family:var(--serif);color:var(--heading);font-size:1.25rem;font-weight:600;margin:0 0 8px;letter-spacing:-.01em;line-height:1.18}
@@ -172,7 +173,7 @@
 
   /* contact (dark) */
   .contact{text-align:center;background:var(--accent-deep)}
-  .contact .label{display:inline-flex;color:#fff}
+  .contact .label{display:inline-flex;color:#fff;margin-bottom:30px}
   .contact h2{margin-bottom:14px;color:#fff}
   .contact p{color:rgba(255,255,255,.82);max-width:54ch;margin:0 auto 26px;font-size:var(--fs-lede)}
   .cform{max-width:600px;margin:0 auto 26px;display:grid;gap:14px}
@@ -182,12 +183,19 @@
     background:rgba(255,255,255,.06);color:#fff;font-family:inherit;font-size:var(--fs-ui)}
   .cform input::placeholder,.cform textarea::placeholder{color:rgba(255,255,255,.65)}
   .cform input:focus,.cform textarea:focus{outline:none;border-color:#fff;background:rgba(255,255,255,.1)}
-  .cform button{justify-self:center;background:#fff;color:var(--accent-deep);border:none;padding:13px 30px;border-radius:40px;
-    font-weight:600;font-size:var(--fs-ui);cursor:pointer;transition:all .2s}
+  .cform button{justify-self:center;background:#fff;color:var(--accent-deep);border:none;padding:13px 28px;border-radius:40px;
+    font-weight:600;font-size:var(--fs-ui);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:9px}
+  .cform button svg{width:18px;height:18px}
   .cform button:hover{background:var(--gold-soft);transform:translateY(-2px)}
-  .social{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+  .social{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px}
   .contact .btn{background:transparent;border-color:rgba(255,255,255,.4);color:#fff}
   .contact .btn:hover{border-color:#fff;color:#fff;background:rgba(255,255,255,.1)}
+  .contact .icon-btn{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.4);
+    display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:.9rem;transition:all .2s}
+  .contact .icon-btn:hover{border-color:#fff;background:rgba(255,255,255,.12);transform:translateY(-2px)}
+  .contact .icon-btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+  .contact .icon-btn svg{width:22px;height:22px}
+  .contact .icon-btn img{width:23px;height:23px;filter:brightness(0) invert(1)}
   footer{background:var(--accent-deep);padding:26px 0 34px;text-align:center;color:rgba(255,255,255,.55);font-size:var(--fs-meta)}
   footer .wrap{border-top:1px solid rgba(255,255,255,.14);padding-top:24px}
 
@@ -246,7 +254,7 @@
     <a href="#home" class="brand">Daniel Vala<span>.</span></a>
     <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="navlinks" aria-label="Open menu">☰</button>
     <div class="navlinks" id="navlinks">
-      <a href="#projects">Projects</a><a href="#writing">Writing</a>
+      <a href="#projects">Projects</a><a href="#essays">Essays</a>
       <a href="#achievements">Achievements</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
     </div>
   </div>
@@ -257,7 +265,7 @@
     <div class="hero">
       <div class="hero-copy">
         <h1 class="reveal">Daniel Vala</h1>
-        <p class="subhead reveal">Accounting and Finance graduate.</p>
+        <p class="subhead reveal">Accounting & Finance graduate</p>
         <p class="lede reveal">I finished my degree at Dublin City University with <b>First Class Honours</b>, specialising in
           Data Analytics and Finance, and gained hands-on experience through a <b>tax internship at PwC</b> in Financial
           Services. I also have a strong interest in financial markets – I have been investing since 15 and am now
@@ -277,7 +285,7 @@
 <div class="stats">
   <div class="wrap">
     <div class="stat reveal"><div class="n">First Class Honours</div><div class="l">Accounting &amp; Finance · 71.64% average</div></div>
-    <div class="stat reveal"><div class="n">13th / 30,000+</div><div class="l">Economics Olympiad, national final</div></div>
+    <div class="stat reveal"><div class="n">13th / 30,000+</div><div class="l">Economics Olympiad · National final</div></div>
     <div class="stat reveal"><div class="n">30</div><div class="l">Kubicle data &amp; finance courses</div></div>
   </div>
 </div>
@@ -290,9 +298,9 @@
   </div>
 </section>
 
-<section id="writing" class="tint">
+<section id="essays" class="tint">
   <div class="wrap">
-    <h2 class="label reveal"><span class="dot"></span>Writing</h2>
+    <h2 class="label reveal"><span class="dot"></span>Essays</h2>
     <p class="section-intro reveal">Longer written pieces where I work through a problem in depth.</p>
     <div class="grid" id="writing-grid"></div>
   </div>
@@ -309,7 +317,7 @@
 <section id="skills" class="tint">
   <div class="wrap">
     <h2 class="label reveal"><span class="dot"></span>Skills</h2>
-    <p class="section-intro reveal">The tools and areas I draw on – strongest in data, finance and quantitative analysis.</p>
+    <p class="section-intro reveal">Skills gained through my coursework and independent learning.</p>
     <div class="skillgrid" id="skill-grid"></div>
   </div>
 </section>
@@ -325,25 +333,25 @@
 
 <section id="contact" class="contact">
   <div class="wrap">
-    <h2 class="label reveal"><span class="dot" style="background:#e7b955"></span>Contact</h2>
+    <h2 class="label reveal"><span class="dot" style="background:#e7b955"></span>Contact me</h2>
     <form class="cform reveal" action="https://formspree.io/f/xqegnaeg" method="POST">
       <div class="row">
         <input type="text" name="name" placeholder="Name" aria-label="Your name" required />
         <input type="email" name="email" placeholder="Email" aria-label="Your email" required />
       </div>
       <textarea name="message" rows="4" placeholder="Message" aria-label="Your message" required></textarea>
-      <button type="submit">Send message</button>
+      <button type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4 20-7z"/><path d="M22 2 11 13"/></svg>Send message</button>
     </form>
     <div class="social reveal">
-      <a href="mailto:daniel.vala2@mail.dcu.ie" class="btn">Email</a>
-      <a href="https://www.linkedin.com/in/daniel-vala-0a6b132b9" class="btn" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/daniel-vala" class="btn" target="_blank" rel="noopener">GitHub</a>
-      <a href="CV_Daniel_Vala.pdf" class="btn" target="_blank" rel="noopener">CV</a>
+      <a href="mailto:vala.dany.2004@gmail.com" class="icon-btn" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+      <a href="https://www.linkedin.com/in/daniel-vala-0a6b132b9" class="icon-btn" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+      <a href="https://github.com/daniel-vala" class="icon-btn" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.42-1.305.762-1.605-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+      <a href="CV_Daniel_Vala.pdf" class="icon-btn" target="_blank" rel="noopener" aria-label="Download CV" title="Download CV"><img src="assets/images/cv-icon.png" alt="CV"></a>
     </div>
   </div>
 </section>
 
-<footer><div class="wrap">© <span id="yr"></span> Daniel Vala · Dublin</div></footer>
+<footer><div class="wrap">© <span id="yr"></span> Daniel Vala</div></footer>
 
 <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal"><div class="modal-inner">
@@ -357,9 +365,8 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",
 const GH_ICON='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.42-1.305.762-1.605-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>';
 const projects=[
   {id:"value-area",cat:"Machine Learning · Python",title:"Value Area Shape Classification",img:"assets/images/ml-thumb-new.jpg",
-   blurb:"Machine learning that classifies market-profile value-area shapes in NQ futures.",
-   detail:"For my Machine Learning module I researched whether market-profile value-area shapes (D, P, b and flat) can be classified automatically – something I couldn't find existing published work on. I manually labelled a dataset of volume profiles, engineered six statistical features (skewness, kurtosis, RMS and others), and trained and compared four models.",
-   result:"97.9% accuracy · K-Nearest Neighbours",
+   blurb:"Machine learning that classifies market profile value area shapes in NQ futures.",
+   detail:"For my Machine Learning module I researched whether market-profile value-area shapes (D, P, b and flat) can be classified automatically – something I couldn't find existing published work on. I manually labelled a dataset of volume profiles, engineered six statistical features (skewness, kurtosis, RMS and others), and trained and compared four models. The best, K-Nearest Neighbours, reached 97.9% accuracy on clearly defined shapes.",
    tools:["Python","Machine learning","Feature engineering","pandas"],links:[["GitHub repo","https://github.com/daniel-vala/Value-Area-Shape-Classification"],["Research paper","assets/ml-research-paper.pdf"]]},
   {id:"stepstone",cat:"Econometrics · FinTech",title:"FinTech Product Pitch: StepStone",img:"assets/images/stepstone-logo.png",fit:"contain",
    blurb:"A FinTech app concept for Irish students, backed by econometric analysis of 1,000+ survey responses.",
