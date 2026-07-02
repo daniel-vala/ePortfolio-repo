@@ -47,9 +47,9 @@
   nav{position:sticky;top:0;z-index:40;backdrop-filter:blur(10px);
     background:rgba(251,250,246,.86);border-bottom:1px solid var(--border)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
-  .brand{font-family:var(--serif);font-weight:600;font-size:1.3rem;color:var(--heading);letter-spacing:-.01em}
+  .brand{font-family:var(--serif);font-weight:600;font-size:1.45rem;color:var(--heading);letter-spacing:-.01em}
   .brand span{color:var(--accent)}
-  .navlinks{display:flex;gap:26px;font-size:var(--fs-ui);font-weight:500}
+  .navlinks{display:flex;gap:28px;font-size:1rem;font-weight:500}
   .navlinks a{color:var(--muted);transition:color .2s;position:relative}
   .navlinks a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--accent);transition:width .25s}
   .navlinks a:hover,.navlinks a.active{color:var(--accent)}
@@ -87,17 +87,18 @@
     border-radius:20px;box-shadow:0 30px 60px -30px rgba(20,19,24,.5);display:block}
 
   /* stats band */
-  .stats{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--paper)}
-  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:clamp(26px,5vh,44px) clamp(20px,5vw,44px)}
-  @media(max-width:680px){.stats .wrap{grid-template-columns:repeat(2,1fr);gap:24px 16px}}
-  .stat .n{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.1rem);color:var(--accent-deep);font-weight:600;line-height:1}
+  .stats{border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    background:linear-gradient(rgba(244,240,231,.9),rgba(244,240,231,.9)),url('assets/images/hobby-trading.jpg') center/cover fixed}
+  .stats .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:clamp(26px,5vh,44px) clamp(20px,5vw,44px)}
+  @media(max-width:680px){.stats .wrap{grid-template-columns:1fr;gap:22px}}
+  .stat .n{font-family:var(--serif);font-size:clamp(1.4rem,2.4vw,1.75rem);color:var(--accent-deep);font-weight:600;line-height:1.05}
   .stat .l{font-size:var(--fs-meta);color:var(--muted);margin-top:6px}
 
   /* sections */
   section{padding:clamp(58px,9vh,100px) 0}
   section.tint{background:var(--paper)}
-  .label{font-size:var(--fs-meta);font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.16em;margin-bottom:14px;display:flex;align-items:center;gap:9px}
-  .label .dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  .label{font-family:var(--sans);font-size:clamp(1.5rem,3.4vw,2.05rem);font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.04em;line-height:1.1;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+  .label .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);flex:none}
   h2{font-family:var(--serif);font-size:clamp(2rem,4.6vw,2.9rem);color:var(--heading);font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
   .section-intro{color:var(--muted);max-width:60ch;margin-bottom:38px;font-size:var(--fs-lede)}
 
@@ -110,7 +111,7 @@
   .card:hover{transform:translateY(-6px);border-color:var(--border-hi);box-shadow:0 26px 52px -30px rgba(19,18,23,.42)}
   .card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
   .card .thumb{aspect-ratio:16/10;background:var(--paper) center/cover no-repeat;border-bottom:1px solid var(--border)}
-  .card .thumb.contain{background-size:auto 55%;background-color:var(--paper)}
+  .card .thumb.contain{background-size:auto 86%;background-color:var(--paper)}
   .card .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
   .card .cat{font-size:.72rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.09em;margin-bottom:8px}
   .card h3{font-family:var(--serif);color:var(--heading);font-size:1.25rem;font-weight:600;margin:0 0 8px;letter-spacing:-.01em;line-height:1.18}
@@ -124,16 +125,17 @@
     background:linear-gradient(120deg,rgba(20,44,84,.94),rgba(15,26,48,.58)),url('assets/images/hobby-trading.jpg') center/cover fixed}
   .band .eyebrow{color:#e7b955;display:flex}
   .band p{font-family:var(--serif);font-size:clamp(1.4rem,3.2vw,2.1rem);font-weight:400;max-width:30ch;margin:0;line-height:1.35}
-  @media(max-width:760px){.band{background-attachment:scroll}}
+  @media(max-width:760px){.band,.stats{background-attachment:scroll}}
 
   /* achievements */
   .ach{display:flex;align-items:center;gap:clamp(24px,5vw,56px);margin-bottom:26px}
   .ach.reverse{flex-direction:row-reverse}
   @media(max-width:720px){.ach,.ach.reverse{flex-direction:column;gap:18px;text-align:center}}
-  .ach-img{flex:0 0 34%;max-width:34%;background:var(--paper);border:1px solid var(--gold-soft);border-radius:var(--radius);
-    padding:clamp(20px,4vw,36px);display:flex;align-items:center;justify-content:center;aspect-ratio:16/10}
+  .ach-img{flex:0 0 36%;max-width:36%;background:var(--paper);border:1px solid var(--gold-soft);border-radius:var(--radius);
+    padding:clamp(12px,2vw,18px);display:flex;align-items:center;justify-content:center;aspect-ratio:7/5}
   @media(max-width:720px){.ach-img{max-width:100%;flex-basis:auto;width:100%}}
-  .ach-img img{max-width:100%;max-height:96px;width:auto;object-fit:contain}
+  .ach-img img{max-width:100%;max-height:100%;object-fit:contain}
+  .ach-img img.sm{max-width:70%;max-height:82%}
   .ach-text{flex:1}
   .ach-text .yr{font-size:var(--fs-meta);font-weight:600;color:var(--gold-text);text-transform:uppercase;letter-spacing:.08em}
   .ach-text h3{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--heading);margin:4px 0 4px;letter-spacing:-.01em}
@@ -151,6 +153,7 @@
   .skill .ic svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7}
   .skill h3{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--heading);margin-bottom:12px}
   .skilltags{display:flex;flex-wrap:wrap;gap:7px}
+  .skill-note{margin-top:12px;font-size:var(--fs-meta);color:var(--muted);font-style:italic}
   .tag{font-size:.8125rem;font-weight:500;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:30px}
 
   /* certificates */
@@ -169,7 +172,7 @@
 
   /* contact (dark) */
   .contact{text-align:center;background:var(--accent-deep)}
-  .contact .label{display:inline-flex;color:#9db8e0}
+  .contact .label{display:inline-flex;color:#fff}
   .contact h2{margin-bottom:14px;color:#fff}
   .contact p{color:rgba(255,255,255,.82);max-width:54ch;margin:0 auto 26px;font-size:var(--fs-lede)}
   .cform{max-width:600px;margin:0 auto 26px;display:grid;gap:14px}
@@ -205,7 +208,12 @@
   .modal p{margin-bottom:14px}
   .modal .res-badge{display:inline-block;background:var(--gold-soft);color:var(--gold-text);font-weight:600;font-size:var(--fs-body);
     padding:8px 14px;border-radius:10px;margin-bottom:14px}
-  .modal .mlinks{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  .modal .mlinks{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;align-items:center}
+  .modal .icon-link{width:46px;height:46px;border-radius:50%;border:1px solid var(--border-hi);display:inline-flex;
+    align-items:center;justify-content:center;color:var(--heading);background:var(--surface);transition:all .2s}
+  .modal .icon-link:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  .modal .icon-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .modal .icon-link svg{width:23px;height:23px}
   .modal ul{list-style:none;margin-top:6px}
   .modal li{padding:11px 0;border-bottom:1px solid var(--border);color:var(--text);font-size:var(--fs-body);display:flex;gap:12px;align-items:baseline}
   .modal li:last-child{border-bottom:none}
@@ -227,7 +235,7 @@
     html{scroll-behavior:auto}
     *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
     .js .reveal{opacity:1!important;transform:none!important}
-    .band{background-attachment:scroll}
+    .band,.stats{background-attachment:scroll}
   }
 </style>
 </head>
@@ -248,15 +256,15 @@
   <div class="wrap">
     <div class="hero">
       <div class="hero-copy">
-        <p class="eyebrow reveal">First-Class Accounting &amp; Finance · Dublin</p>
-        <h1 class="reveal">Finance, markets<br>&amp; data.</h1>
-        <p class="subhead reveal">Accounting &amp; Finance graduate with a focus on financial markets and trading.</p>
+        <h1 class="reveal">Daniel Vala</h1>
+        <p class="subhead reveal">Accounting and Finance graduate.</p>
         <p class="lede reveal">I finished my degree at Dublin City University with <b>First Class Honours</b>, specialising in
-          Data Analytics and Finance. I have a strong interest in financial markets – I have been investing since 15
-          and am now building my own <b>algorithmic trading and backtesting framework</b>.</p>
+          Data Analytics and Finance, and gained hands-on experience through a <b>tax internship at PwC</b> in Financial
+          Services. I also have a strong interest in financial markets – I have been investing since 15 and am now
+          building my own <b>algorithmic trading and backtesting framework</b>.</p>
         <div class="cta reveal">
-          <a href="#projects" class="btn solid">View my work →</a>
-          <a href="CV_Daniel_Vala.pdf" class="btn" target="_blank" rel="noopener">Download CV</a>
+          <a href="CV_Daniel_Vala.pdf" class="btn solid" target="_blank" rel="noopener">Download CV</a>
+          <a href="#contact" class="btn">Hire me</a>
         </div>
       </div>
       <div class="hero-photo reveal">
@@ -268,8 +276,7 @@
 
 <div class="stats">
   <div class="wrap">
-    <div class="stat reveal"><div class="n">First Class</div><div class="l">Honours · 71.6% average</div></div>
-    <div class="stat reveal"><div class="n">97.9%</div><div class="l">Best model accuracy (ML project)</div></div>
+    <div class="stat reveal"><div class="n">First Class Honours</div><div class="l">Accounting &amp; Finance · 71.64% average</div></div>
     <div class="stat reveal"><div class="n">13th / 30,000+</div><div class="l">Economics Olympiad, national final</div></div>
     <div class="stat reveal"><div class="n">30</div><div class="l">Kubicle data &amp; finance courses</div></div>
   </div>
@@ -277,8 +284,7 @@
 
 <section id="projects">
   <div class="wrap">
-    <p class="label reveal"><span class="dot"></span>Projects</p>
-    <h2 class="reveal">Selected work</h2>
+    <h2 class="label reveal"><span class="dot"></span>Projects</h2>
     <p class="section-intro reveal">Applied projects where I use data, econometrics and machine learning on real problems.</p>
     <div class="grid" id="projects-grid"></div>
   </div>
@@ -286,24 +292,15 @@
 
 <section id="writing" class="tint">
   <div class="wrap">
-    <p class="label reveal"><span class="dot"></span>Writing</p>
-    <h2 class="reveal">Analysis &amp; research</h2>
+    <h2 class="label reveal"><span class="dot"></span>Writing</h2>
     <p class="section-intro reveal">Longer written pieces where I work through a problem in depth.</p>
     <div class="grid" id="writing-grid"></div>
   </div>
 </section>
 
-<div class="band reveal">
-  <div class="wrap">
-    <p class="eyebrow">Markets</p>
-    <p>Following markets since I was 15 – from my first investments to building my own trading systems.</p>
-  </div>
-</div>
-
 <section id="achievements">
   <div class="wrap">
-    <p class="label reveal"><span class="dot"></span>Achievements</p>
-    <h2 class="reveal">Recognition</h2>
+    <h2 class="label reveal"><span class="dot"></span>Achievements</h2>
     <p class="section-intro reveal">Competitions and awards from my academic and personal journey.</p>
     <div id="ach-list"></div>
   </div>
@@ -311,8 +308,7 @@
 
 <section id="skills" class="tint">
   <div class="wrap">
-    <p class="label reveal"><span class="dot"></span>Skills</p>
-    <h2 class="reveal">What I work with</h2>
+    <h2 class="label reveal"><span class="dot"></span>Skills</h2>
     <p class="section-intro reveal">The tools and areas I draw on – strongest in data, finance and quantitative analysis.</p>
     <div class="skillgrid" id="skill-grid"></div>
   </div>
@@ -320,8 +316,7 @@
 
 <section id="certificates">
   <div class="wrap">
-    <p class="label reveal"><span class="dot"></span>Certificates</p>
-    <h2 class="reveal">Kubicle certifications</h2>
+    <h2 class="label reveal"><span class="dot"></span>Certificates</h2>
     <p class="section-intro reveal">30 completed Kubicle courses across the data and finance toolset. Click any area to see the courses and open each certificate.</p>
     <div class="certgrid" id="cert-grid"></div>
     <p class="cert-note reveal"><b>30</b> courses completed · click any course to view its certificate</p>
@@ -330,10 +325,7 @@
 
 <section id="contact" class="contact">
   <div class="wrap">
-    <p class="label reveal"><span class="dot" style="background:#e7b955"></span>Contact</p>
-    <h2 class="reveal">Let's talk</h2>
-    <p class="reveal">I'm looking for graduate roles in trading, investment, data and finance. I'm based in Dublin and
-      eligible to work in Ireland and the EU – if that sounds like a fit, I'd be glad to hear from you.</p>
+    <h2 class="label reveal"><span class="dot" style="background:#e7b955"></span>Contact</h2>
     <form class="cform reveal" action="https://formspree.io/f/xqegnaeg" method="POST">
       <div class="row">
         <input type="text" name="name" placeholder="Name" aria-label="Your name" required />
@@ -362,20 +354,21 @@
 
 <script>
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const GH_ICON='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.997.108-.775.42-1.305.762-1.605-2.665-.3-5.467-1.332-5.467-5.93 0-1.31.468-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>';
 const projects=[
   {id:"value-area",cat:"Machine Learning · Python",title:"Value Area Shape Classification",img:"assets/images/ml-thumb-new.jpg",
    blurb:"Machine learning that classifies market-profile value-area shapes in NQ futures.",
    detail:"For my Machine Learning module I researched whether market-profile value-area shapes (D, P, b and flat) can be classified automatically – something I couldn't find existing published work on. I manually labelled a dataset of volume profiles, engineered six statistical features (skewness, kurtosis, RMS and others), and trained and compared four models.",
    result:"97.9% accuracy · K-Nearest Neighbours",
-   tools:["Python","Machine learning","Feature engineering","pandas"],links:[["Research paper","assets/ml-research-paper.pdf"]]},
+   tools:["Python","Machine learning","Feature engineering","pandas"],links:[["GitHub repo","https://github.com/daniel-vala/Value-Area-Shape-Classification"],["Research paper","assets/ml-research-paper.pdf"]]},
   {id:"stepstone",cat:"Econometrics · FinTech",title:"FinTech Product Pitch: StepStone",img:"assets/images/stepstone-logo.png",fit:"contain",
    blurb:"A FinTech app concept for Irish students, backed by econometric analysis of 1,000+ survey responses.",
    detail:"For my Econometrics & Forecasting module I designed StepStone – a mobile app to help Irish students work toward long-term goals like a first home or an investment portfolio. I built the analysis in Python on a survey of over 1,000 students: cleaning and validation, MCAR testing, outlier checks, exploratory analysis of students living at home versus independently, regression and forecasting – then pitched it in a short video.",
-   tools:["Python","Econometrics","Regression","Forecasting"],links:[["Watch the pitch","https://youtu.be/g3ddmqbRaks"]]},
+   tools:["Python","Econometrics","Regression","Forecasting"],links:[["GitHub repo","https://github.com/daniel-vala/StepStone"],["Watch the pitch","https://youtu.be/g3ddmqbRaks"]]},
   {id:"ecoenergy",cat:"Power BI · Group project",title:"Global Profitability Analysis: EcoEnergy",img:"assets/images/dashboard-thumb.jpg",
    blurb:"A Power BI dashboard analysing ten years of global profitability and outsourcing options for EcoEnergy Corp.",
    detail:"A team project (five of us) analysing ten years of data for EcoEnergy Corp across five continents. In Power BI we built interactive dashboards on regional sales and profitability, found cost inefficiencies, and recommended a production-hub model concentrating manufacturing in the lowest-cost region per product – with a predictive view of the projected impact.",
-   tools:["Power BI","Data visualisation","Data modelling"],links:[["View dashboard","assets/coding-dashboard.pdf"],["Report","assets/coding-report.pdf"]]}
+   tools:["Power BI","Data visualisation","Data modelling"],links:[["View dashboard","assets/coding-dashboard.pdf"],["Report","assets/coding-report.pdf"],["Power BI file","assets/EcoEnergy-Dashboard.pbix"]]}
 ];
 const writing=[
   {id:"bitcoin",cat:"Economics · Research",title:"The Bitcoin Standard",img:"assets/images/bitcoin-thumb-new.jpg",
@@ -396,9 +389,9 @@ const achievements=[
    text:"A competition running across 22 countries. After the school and regional rounds I reached the national final hosted by the Czech National Bank and placed 13th out of over 30,000 competitors."},
   {yr:"2022",img:"assets/images/soc-competition.png",alt:"Secondary School Research Competition",title:"Secondary School Research Competition",res:"4th in Moravia",
    text:"In the Středoškolská Odborná Činnost I placed 4th in the Moravian round with a project on the economics of Bitcoin versus fiat currencies – interviewing two leading economists and defending it before an expert jury."},
-  {yr:"2025",img:"assets/images/rotman-challenge.png",alt:"Trinity SMF x Rotman Market Challenge",title:"Trinity SMF × Rotman Market Challenge",res:"7th in Ireland",
+  {yr:"2023",img:"assets/images/rotman-challenge.png",alt:"Trinity SMF x Rotman Market Challenge",title:"Trinity SMF × Rotman Market Challenge",res:"7th in Ireland",
    text:"A fast-paced trading simulation hosted by Trinity SMF in Dublin. With my teammate I placed 7th in Ireland, making split-second decisions that tested our understanding of market behaviour."},
-  {yr:"2024",img:"assets/images/pwc-award.png",alt:"PwC",title:"PwC Award for Financial Accounting",res:"Top 10 in class",
+  {yr:"2024",img:"assets/images/pwc-award.png",cls:"sm",alt:"PwC",title:"PwC Award for Financial Accounting",res:"Top 10 in class",
    text:"Recognised with the PwC Award for my performance in the Financial Accounting module at DCU, placing in the top 10 of my class."}
 ];
 const ic={
@@ -410,11 +403,11 @@ const ic={
   globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/>'
 };
 const skills=[
-  {ic:"code",title:"Programming & Data",tags:["Python","SQL","pandas","(applied with AI)"]},
-  {ic:"bi",title:"Business Intelligence",tags:["Advanced Excel","Power BI","Data visualisation"]},
-  {ic:"quant",title:"Quantitative & Modelling",tags:["Econometrics","Machine learning","Financial modelling","Statistics"]},
-  {ic:"finance",title:"Finance & Economics",tags:["Corporate finance","Portfolio theory","Accounting (IFRS)","Micro & macro"]},
-  {ic:"ai",title:"AI & Automation",tags:["AI workflows","Process automation","AI-assisted research"]},
+  {ic:"code",title:"Programming",tags:["Python","SQL","HTML / CSS / Quarto (web design)"],note:"Studied the basics, applied with AI."},
+  {ic:"bi",title:"Business Intelligence",tags:["Advanced MS Excel","Power BI","Data visualisation"]},
+  {ic:"quant",title:"Quantitative & Data",tags:["Probability","Statistics","Econometrics","Machine learning","Financial modelling"]},
+  {ic:"finance",title:"Finance & Economics",tags:["Corporate finance","Portfolio theory","Microeconomics","Macroeconomics","Accounting","Budgeting & Costing"]},
+  {ic:"ai",title:"AI",tags:["Process automation","AI research workflows","AI coding"]},
   {ic:"globe",title:"Languages",tags:["Czech (native)","English (fluent)","French (intermediate)"]}
 ];
 const certs=[
@@ -436,11 +429,11 @@ function card(p){
 document.getElementById("projects-grid").innerHTML=projects.map(card).join("");
 document.getElementById("writing-grid").innerHTML=writing.map(card).join("");
 document.getElementById("ach-list").innerHTML=achievements.map((a,i)=>
-  `<div class="ach reveal ${i%2?"reverse":""}"><div class="ach-img"><img src="${esc(a.img)}" alt="${esc(a.alt)}"></div>
+  `<div class="ach reveal ${i%2?"reverse":""}"><div class="ach-img"><img src="${esc(a.img)}" alt="${esc(a.alt)}" class="${a.cls||''}"></div>
    <div class="ach-text"><div class="yr">${esc(a.yr)}</div><h3>${esc(a.title)}</h3><div class="res">${esc(a.res)}</div><p>${esc(a.text)}</p></div></div>`).join("");
 document.getElementById("skill-grid").innerHTML=skills.map(s=>
   `<div class="skill reveal"><div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">${ic[s.ic]}</svg></div>
-   <h3>${esc(s.title)}</h3><div class="skilltags">${s.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></div>`).join("");
+   <h3>${esc(s.title)}</h3><div class="skilltags">${s.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>${s.note?`<p class="skill-note">${esc(s.note)}</p>`:""}</div>`).join("");
 document.getElementById("cert-grid").innerHTML=certs.map((c,i)=>
   `<article class="certcard reveal" data-cert="${i}" tabindex="0" role="button" aria-label="See ${esc(c.name)} courses">
     <div class="top"><h3>${esc(c.name)}</h3><span class="cnt">${c.count}</span></div>
@@ -457,7 +450,9 @@ function openModal(html,hash){
 function openProject(id){
   const p=all.find(x=>x.id===id);if(!p)return;
   const res=p.result?`<div class="res-badge">${esc(p.result)}</div>`:"";
-  const links=p.links&&p.links.length?`<div class="mlinks">${p.links.map(l=>`<a class="btn solid" href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])} →</a>`).join("")}</div>`:"";
+  const _oth=(p.links||[]).filter(l=>!l[1].includes("github.com"));
+  const _gh=(p.links||[]).filter(l=>l[1].includes("github.com"));
+  const links=(p.links&&p.links.length)?`<div class="mlinks">${_oth.map(l=>`<a class="btn solid" href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])} →</a>`).join("")}${_gh.map(l=>`<a class="icon-link" href="${esc(l[1])}" target="_blank" rel="noopener" aria-label="View source on GitHub" title="View on GitHub">${GH_ICON}</a>`).join("")}</div>`:"";
   openModal(`<img class="mimg ${p.fit==='contain'?'contain':''}" src="${esc(p.img)}" alt=""><div class="mbody"><div class="cat">${esc(p.cat)}</div>
     <h3 id="modal-title">${esc(p.title)}</h3>${res}<p>${esc(p.detail)}</p>
     <div class="skilltags">${p.tools.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>${links}</div>`,"#p-"+id);
