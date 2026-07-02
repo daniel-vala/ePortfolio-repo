@@ -1,23 +1,13 @@
 # Daniel Vala — ePortfolio
 
-Personal portfolio website. Single-file, hand-built (HTML/CSS/JS), no build step.
+My personal portfolio — projects, essays, achievements and certifications.
 
-## Run locally
-Open `index.html` in a browser.
+**Live site → [daniel-vala.github.io](https://daniel-vala.github.io)**
 
-## Deploy (GitHub Pages)
-Push to the repo, then enable Pages on the default branch (root). Target: `daniel-vala.github.io`.
+First-Class Accounting & Finance graduate from Dublin City University, with a focus on financial markets, data and quantitative analysis.
 
-## Structure
-- `index.html` — the whole site (styles + content + scripts inline)
-- `CV_Daniel_Vala.pdf` — CV download target (add this file)
-- `assets/` — images, project reports, OG image (to add)
+A single-page site, hand-built with HTML, CSS and JavaScript.
 
-## TODO before going public
-- [ ] Real contact details (email, LinkedIn, GitHub)
-- [ ] Add `CV_Daniel_Vala.pdf` (Finance version) to repo root
-- [ ] Confirm/correct project descriptions + tools (Value Area, StepStone, EcoEnergy, Lyten)
-- [ ] Real links per project (GitHub repos, rendered reports/PDFs)
-- [ ] Create ML + Econometrics GitHub repos with clean READMEs and link them
-- [ ] Open Graph preview image + final favicon
-- [ ] Colour/type match to the Canva CV
+### Get in touch
+- Email — daniel.vala2@mail.dcu.ie
+- LinkedIn — [daniel-vala](https://www.linkedin.com/in/daniel-vala-0a6b132b9)
