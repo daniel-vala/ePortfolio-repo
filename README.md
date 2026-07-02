@@ -9,5 +9,6 @@ First-Class Accounting & Finance graduate from Dublin City University, with a fo
 A single-page site, hand-built with HTML, CSS and JavaScript.
 
 ### Get in touch
-- Email — daniel.vala2@mail.dcu.ie
+- Email — vala.dany.2004@gmail.com
+
 - LinkedIn — [daniel-vala](https://www.linkedin.com/in/daniel-vala-0a6b132b9)
