@@ -477,7 +477,8 @@ function openCert(i){
 }
 function close(){overlay.classList.remove("open");document.body.classList.remove("modal-open");
   bgEls().forEach(el=>el.inert=false);try{history.replaceState(null,"",location.pathname)}catch(e){}
-  if(lastFocus&&lastFocus.focus)lastFocus.focus();}
+  if(lastFocus&&lastFocus.focus)lastFocus.focus();
+  setTimeout(()=>{if(!overlay.classList.contains("open"))body.innerHTML="";},220);}
 function activate(t){
   const c=t.closest(".card");if(c){openProject(c.dataset.id);return}
   const cc=t.closest(".certcard");if(cc){openCert(+cc.dataset.cert)}
