@@ -101,7 +101,7 @@
   .label{font-family:var(--sans);font-size:clamp(1.5rem,3.4vw,2.05rem);font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.04em;line-height:1.1;margin-bottom:18px;display:flex;align-items:center;gap:12px}
   .label .dot{display:none}
   h2{font-family:var(--serif);font-size:clamp(2rem,4.6vw,2.9rem);color:var(--heading);font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
-  .section-intro{color:var(--muted);max-width:60ch;margin-bottom:38px;font-size:var(--fs-lede)}
+  .section-intro{color:var(--muted);max-width:82ch;margin-bottom:38px;font-size:var(--fs-lede)}
 
   /* project / writing cards with image */
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -142,6 +142,9 @@
   .ach-text h3{font-family:var(--serif);font-size:1.5rem;font-weight:600;color:var(--heading);margin:4px 0 4px;letter-spacing:-.01em}
   .ach-text .res{font-weight:600;color:var(--accent);margin-bottom:8px}
   .ach-text p{color:var(--muted);font-size:var(--fs-body)}
+  .ach-link{display:inline-block;margin-top:12px;color:var(--accent);font-weight:600;font-size:var(--fs-body);cursor:pointer}
+  .ach-link:hover{text-decoration:underline}
+  .ach-link:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
   /* skills */
   .skillgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -210,6 +213,8 @@
   .modal .mimg{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--paper);border-bottom:1px solid var(--border);
     border-radius:20px 20px 0 0;display:block}
   .modal .mimg.contain{object-fit:contain;background:var(--paper);padding:18px}
+  .modal .mvideo{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;margin:22px 0 2px}
+  .modal .mvideo iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .modal .mbody{padding:clamp(24px,4vw,34px)}
   .modal .cat{font-size:var(--fs-meta);font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.1em}
   .modal h3{font-family:var(--serif);color:var(--heading);font-size:1.5rem;font-weight:600;margin:8px 0 16px;letter-spacing:-.01em}
@@ -285,7 +290,7 @@
 <div class="stats">
   <div class="wrap">
     <div class="stat reveal"><div class="n">First Class Honours</div><div class="l">Accounting &amp; Finance · 71.64% average</div></div>
-    <div class="stat reveal"><div class="n">13th / 30,000+</div><div class="l">Economics Olympiad · National final</div></div>
+    <div class="stat reveal"><div class="n">13th in National final</div><div class="l">Economics Olympiad · 30,000+ participants</div></div>
     <div class="stat reveal"><div class="n">30</div><div class="l">Kubicle data &amp; finance courses</div></div>
   </div>
 </div>
@@ -325,7 +330,7 @@
 <section id="certificates">
   <div class="wrap">
     <h2 class="label reveal"><span class="dot"></span>Certificates</h2>
-    <p class="section-intro reveal">30 completed Kubicle courses across the data and finance toolset. Click any area to see the courses and open each certificate.</p>
+    <p class="section-intro reveal">30 completed Kubicle courses across the data and finance toolset.<br>Click any area to see the courses and open each certificate.</p>
     <div class="certgrid" id="cert-grid"></div>
     <p class="cert-note reveal"><b>30</b> courses completed · click any course to view its certificate</p>
   </div>
@@ -366,22 +371,22 @@ const GH_ICON='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><
 const projects=[
   {id:"value-area",cat:"Machine Learning · Python",title:"Value Area Shape Classification",img:"assets/images/ml-thumb-new.jpg",
    blurb:"Machine learning that classifies market profile value area shapes in NQ futures.",
-   detail:"For my Machine Learning module I researched whether market-profile value-area shapes (D, P, b and flat) can be classified automatically – something I couldn't find existing published work on. I manually labelled a dataset of volume profiles, engineered six statistical features (skewness, kurtosis, RMS and others), and trained and compared four models. The best, K-Nearest Neighbours, reached 97.9% accuracy on clearly defined shapes.",
+   detail:"For my Machine Learning module I researched whether market profile value area shapes (D, P, b and flat) can be classified automatically – something I couldn't find existing published work on. I manually labelled a dataset of volume profiles, engineered six statistical features (skewness, kurtosis, RMS and others), and trained and compared four models. The best, K-Nearest Neighbours, reached 97.9% accuracy on clearly defined shapes.",
    tools:["Python","Machine learning","Feature engineering","pandas"],links:[["GitHub repo","https://github.com/daniel-vala/Value-Area-Shape-Classification"],["Research paper","assets/ml-research-paper.pdf"]]},
   {id:"stepstone",cat:"Econometrics · FinTech",title:"FinTech Product Pitch: StepStone",img:"assets/images/stepstone-logo.png",fit:"contain",
    blurb:"A FinTech app concept for Irish students, backed by econometric analysis of 1,000+ survey responses.",
    detail:"For my Econometrics & Forecasting module I designed StepStone – a mobile app to help Irish students work toward long-term goals like a first home or an investment portfolio. I built the analysis in Python on a survey of over 1,000 students: cleaning and validation, MCAR testing, outlier checks, exploratory analysis of students living at home versus independently, regression and forecasting – then pitched it in a short video.",
-   tools:["Python","Econometrics","Regression","Forecasting"],links:[["GitHub repo","https://github.com/daniel-vala/StepStone"],["Watch the pitch","https://youtu.be/g3ddmqbRaks"]]},
+   tools:["Python","Econometrics","Regression","Forecasting"],video:"https://www.youtube.com/embed/g3ddmqbRaks",links:[["GitHub repo","https://github.com/daniel-vala/StepStone"]]},
   {id:"ecoenergy",cat:"Power BI · Group project",title:"Global Profitability Analysis: EcoEnergy",img:"assets/images/dashboard-thumb.jpg",
    blurb:"A Power BI dashboard analysing ten years of global profitability and outsourcing options for EcoEnergy Corp.",
-   detail:"A team project (five of us) analysing ten years of data for EcoEnergy Corp across five continents. In Power BI we built interactive dashboards on regional sales and profitability, found cost inefficiencies, and recommended a production-hub model concentrating manufacturing in the lowest-cost region per product – with a predictive view of the projected impact.",
+   detail:"A team project analysing ten years of data for EcoEnergy Corp across five continents. In Power BI we built interactive dashboards on regional sales and profitability, found cost inefficiencies, and recommended a production-hub model concentrating manufacturing in the lowest-cost region per product – with a predictive view of the projected impact.",
    tools:["Power BI","Data visualisation","Data modelling"],links:[["View dashboard","assets/coding-dashboard.pdf"],["Report","assets/coding-report.pdf"],["Power BI file","assets/EcoEnergy-Dashboard.pbix"]]}
 ];
 const writing=[
   {id:"bitcoin",cat:"Economics · Research",title:"The Bitcoin Standard",img:"assets/images/bitcoin-thumb-new.jpg",
    blurb:"Whether Bitcoin could work as an alternative monetary standard – my secondary-school research entry.",
    detail:"My entry to the Czech Secondary School Research Competition (4th in the Moravian round). I examined the fiat system and its problems – inflation and the Cantillon effect – and whether Bitcoin could serve as an alternative monetary standard. I ran two 60–90 minute interviews (a fintech financial controller/analyst and a crypto specialist), wrote the paper in Czech and defended it before an expert jury.",
-   tools:["Economics","Research","Interviews"],links:[["Research paper","assets/soc-paper.pdf"],["Presentation","https://www.youtube.com/watch?v=Q5pu7KkvZNk"]]},
+   tools:["Economics","Research","Interviews"],video:"https://www.youtube.com/embed/Q5pu7KkvZNk",links:[["Research paper","assets/soc-paper.pdf"]]},
   {id:"nicaragua",cat:"Macroeconomics",title:"Macroeconomic Analysis of Nicaragua",img:"assets/images/nicaragua-thumb.jpg",
    blurb:"Fiscal position, monetary policy and external risks, built on the IMF Article IV consultation.",
    detail:"For my Macroeconomics module I analysed Nicaragua from its IMF Article IV consultation: GDP growth, inflation and the balance of payments; fiscal policy and public-debt sustainability; the crawling-peg regime and monetary transmission in a highly dollarised economy; and future risks such as changes to US migration policy – applied throughout with core macro models and diagrams.",
@@ -392,10 +397,10 @@ const writing=[
    tools:["Business strategy","Case analysis"],links:[["Read the report","assets/business-strategy-report.pdf"]]}
 ];
 const achievements=[
-  {yr:"2022",img:"assets/images/economics-olympiad.png",alt:"Economics Olympiad",title:"Economics Olympiad",res:"13th of 30,000+ · National Final",
+  {yr:"2022",img:"assets/images/economics-olympiad.png",alt:"Economics Olympiad",title:"Economics Olympiad",res:"13th of 30,000+ participants · National Final",
    text:"A competition running across 22 countries. After the school and regional rounds I reached the national final hosted by the Czech National Bank and placed 13th out of over 30,000 competitors."},
-  {yr:"2022",img:"assets/images/soc-competition.png",alt:"Secondary School Research Competition",title:"Secondary School Research Competition",res:"4th in Moravia",
-   text:"In the Středoškolská Odborná Činnost I placed 4th in the Moravian round with a project on the economics of Bitcoin versus fiat currencies – interviewing two leading economists and defending it before an expert jury."},
+  {yr:"2022",img:"assets/images/soc-competition.png",alt:"Secondary School Research Competition",title:"Secondary School Research Competition",res:"4th in Moravia",link:{id:"bitcoin",label:"Read the full project →"},
+   text:"In the Secondary School Research Competition I placed 4th in the Moravian round with a project on the economics of Bitcoin versus fiat currencies – interviewing two leading economists and defending it before an expert jury."},
   {yr:"2023",img:"assets/images/rotman-challenge.png",alt:"Trinity SMF x Rotman Market Challenge",title:"Trinity SMF × Rotman Market Challenge",res:"7th in Ireland",
    text:"A fast-paced trading simulation hosted by Trinity SMF in Dublin. With my teammate I placed 7th in Ireland, making split-second decisions that tested our understanding of market behaviour."},
   {yr:"2024",img:"assets/images/pwc-award.png",cls:"sm",alt:"PwC",title:"PwC Award for Financial Accounting",res:"Top 10 in class",
@@ -437,7 +442,7 @@ document.getElementById("projects-grid").innerHTML=projects.map(card).join("");
 document.getElementById("writing-grid").innerHTML=writing.map(card).join("");
 document.getElementById("ach-list").innerHTML=achievements.map((a,i)=>
   `<div class="ach reveal ${i%2?"reverse":""}"><div class="ach-img"><img src="${esc(a.img)}" alt="${esc(a.alt)}" class="${a.cls||''}"></div>
-   <div class="ach-text"><div class="yr">${esc(a.yr)}</div><h3>${esc(a.title)}</h3><div class="res">${esc(a.res)}</div><p>${esc(a.text)}</p></div></div>`).join("");
+   <div class="ach-text"><div class="yr">${esc(a.yr)}</div><h3>${esc(a.title)}</h3><div class="res">${esc(a.res)}</div><p>${esc(a.text)}</p>${a.link?`<a class="ach-link" data-proj="${esc(a.link.id)}" href="#p-${esc(a.link.id)}">${esc(a.link.label)}</a>`:""}</div></div>`).join("");
 document.getElementById("skill-grid").innerHTML=skills.map(s=>
   `<div class="skill reveal"><div class="ic"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">${ic[s.ic]}</svg></div>
    <h3>${esc(s.title)}</h3><div class="skilltags">${s.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>${s.note?`<p class="skill-note">${esc(s.note)}</p>`:""}</div>`).join("");
@@ -457,12 +462,13 @@ function openModal(html,hash){
 function openProject(id){
   const p=all.find(x=>x.id===id);if(!p)return;
   const res=p.result?`<div class="res-badge">${esc(p.result)}</div>`:"";
+  const vid=p.video?`<div class="mvideo"><iframe src="${esc(p.video)}" title="${esc(p.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>`:"";
   const _oth=(p.links||[]).filter(l=>!l[1].includes("github.com"));
   const _gh=(p.links||[]).filter(l=>l[1].includes("github.com"));
   const links=(p.links&&p.links.length)?`<div class="mlinks">${_oth.map(l=>`<a class="btn solid" href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])} →</a>`).join("")}${_gh.map(l=>`<a class="icon-link" href="${esc(l[1])}" target="_blank" rel="noopener" aria-label="View source on GitHub" title="View on GitHub">${GH_ICON}</a>`).join("")}</div>`:"";
   openModal(`<img class="mimg ${p.fit==='contain'?'contain':''}" src="${esc(p.img)}" alt=""><div class="mbody"><div class="cat">${esc(p.cat)}</div>
     <h3 id="modal-title">${esc(p.title)}</h3>${res}<p>${esc(p.detail)}</p>
-    <div class="skilltags">${p.tools.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>${links}</div>`,"#p-"+id);
+    <div class="skilltags">${p.tools.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>${links}${vid}</div>`,"#p-"+id);
 }
 function openCert(i){
   const c=certs[i];if(!c)return;
@@ -476,7 +482,7 @@ function activate(t){
   const c=t.closest(".card");if(c){openProject(c.dataset.id);return}
   const cc=t.closest(".certcard");if(cc){openCert(+cc.dataset.cert)}
 }
-document.addEventListener("click",e=>{if(!e.target.closest(".overlay"))activate(e.target)});
+document.addEventListener("click",e=>{const _al=e.target.closest(".ach-link");if(_al){e.preventDefault();openProject(_al.dataset.proj);return}if(!e.target.closest(".overlay"))activate(e.target)});
 xbtn.onclick=close;
 overlay.onclick=e=>{if(e.target===overlay)close()};
 document.addEventListener("keydown",e=>{
